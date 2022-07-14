@@ -1,30 +1,24 @@
 #!/usr/bin/env bash
 
 function palabra_mas_corta {
-    shortest="aaaaaaaaaaaaaaaaaa"
-	for word in $(cat $1); do
-		if [ ${#word} -lt ${#shortest} ]; then
-			shortest=$word
+    CORTA="aaaaaaaaaaaaaaaaaa"
+	for PALABRA	in $(cat $1); do
+		if [ ${#PALABRA} -lt ${#CORTA} ]; then
+			CORTA=$PALABRA
 		fi
 	done
-	echo "La palabra mas corta es: $shortest"
+	echo "La palabra mas corta es: $CORTA"
 }
 											
 function palabra_mas_larga {
-	longest=""
-	for word in $(cat $1); do
-		if [ ${#word} -gt ${#longest} ]; then
-			longest=$word
+	LARGA=""
+	for PALABRA in $(cat $1); do
+		if [ ${#PALABRA} -gt ${#LARGA} ]; then
+			LARGA=$PALABRA
 		fi
 	done
-	echo "La palabra mas larga es: $longest"
-}
-
-function promedio_longitud_palabras {
-	echo ${#longest} ${#shortest}
-	echo promedio=$((${#longest}/${#shortest}))
+	echo "La palabra mas larga es: $LARGA"
 }
 
 palabra_mas_corta $1
 palabra_mas_larga $1
-promedio_longitud_palabras

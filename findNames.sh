@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
-capital=$( grep -e '^[[:upper:]][[:lower:]]' $1 )
-echo $capital
+NOMBRE='^[[:upper:]]'
+for PALABRA in $(cat $1); do
+	if [[ $PALABRA =~ $NOMBRE ]]; then
+		echo $PALABRA
+	fi
+done < $1
