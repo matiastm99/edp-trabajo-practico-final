@@ -9,7 +9,7 @@ function filtrador_de_palabras {
     done < "$1"
 }
 filtrador_de_palabras "$1"
-echo "${PALABRAS_FILTRADAS[@]}" > stopwords
+echo "${PALABRAS_FILTRADAS[@]}" > stopwords.txt
 
-grep -oE '[[:alpha:]]+' "$1" | grep -v stopwords | sort -f | uniq -ic | sort -nr | head -10
+grep -oE '[[:alpha:]]+' "$1" | grep -v -w -f stopwords.txt | sort -f | uniq -ic | sort -nr | head -10
 
