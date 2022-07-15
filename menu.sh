@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 echo "Introduzca la ubicacion del texto"
-read texto
-TEXTO=$texto
+read ubicacion_texto
+TEXTO=$ubicacion_texto
 PS3='Elija> '
 echo "Que app desea usar?"
 opciones=("statsWords" "statsUsageWords" "findNames" "statsSentences" "blankLinesCounter" "SALIR")
