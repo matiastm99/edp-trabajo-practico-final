@@ -10,7 +10,25 @@ El trabajo consiste en una serie de scripts (en bash) para análisis de texto. A
 4. **statsSentences.sh**: Indicador de longitud de oraciones (la más larga, la más corta y el promedio de longitud)
 5. **blankLinesCounter.sh**: Contador de lineas en blanco.
 
-Los scripts se utilizan de la siguiente manera:
-bash *nombre_del_script* *nombre_del_texto*
+Para utilizar los scripts se debe iniciar el menu de la siguiente manera:
+bash menu.sh
+Se preguntara la ubicacion del archivo de texto a utilizar, luego se desplegara el menu de opciones. Introducir el numero que corresponda a la app deseada.
 
-Por ejemplo: bash findNames.sh texto.txt
+Ejemplo de ejecucion:
+
+$ bash menu.sh
+
+Introduza la ubicacion del texto
+
+*/home/usuario/directorio/archivo_de_texto.txt*
+
+Que app desea usar?
+1) statsWords
+2) statsUsageWords
+3) findNames
+4) statsSentences
+5) blankLinesCounter
+6) SALIR
+
+Elija> *introducimos el numero correspondiente*
+
