@@ -3,24 +3,33 @@
 echo "Introduzca la ubicacion del texto"
 read ubicacion_texto
 TEXTO=$ubicacion_texto
-PS3='Elija> '
-echo "Que app desea usar?"
-opciones=("statsWords" "statsUsageWords" "findNames" "statsSentences" "blankLinesCounter" "SALIR")
 
-select opcion in "${opciones[@]}"
-do
+while true; do
+	echo ""
+	PS3='Elija> '
+	echo "Que app desea usar?"
+	opciones=("statsWords" "statsUsageWords" "findNames" "statsSentences" "blankLinesCounter" "SALIR")
+
+	select opcion in "${opciones[@]}"; do
 	case $opcion in
 		"statsWords")
-			./scripts/statsWords.sh $TEXTO;;
-		"statsUsageWords")
-			./scripts/statsUsageWords.sh $TEXTO;;
-		"findNames")
-			./scripts/findNames.sh $TEXTO;;
-		"statsSentences")
-			./scripts/statsSentences.sh $TEXTO;;
-		"blankLinesCounter")
-			./scripts/blankLinesCounter.sh $TEXTO;;
-		"SALIR")
+			./scripts/statsWords.sh $TEXTO
 			break ;;
+		"statsUsageWords")
+			./scripts/statsUsageWords.sh $TEXTO
+			break ;;
+		"findNames")
+			./scripts/findNames.sh $TEXTO
+			break ;;
+		"statsSentences")
+			./scripts/statsSentences.sh $TEXTO
+			break ;;
+		"blankLinesCounter")
+			./scripts/blankLinesCounter.sh $TEXTO
+			break ;;
+		"SALIR")
+			break 2;;
+		*) echo "La opcion $REPLY ingresada es incorrecta";;
 	esac
+	done
 done
