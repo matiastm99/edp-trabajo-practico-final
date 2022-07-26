@@ -13,5 +13,3 @@ printf '%s\n' "${PALABRAS_FILTRADAS[@]}" > stopwords
 
 echo "Esta son las 10 palabras (compuestas por, minimo, 4 letras) mas utilizadas en el texto:"
 grep -oE '[[:alpha:]]+' $1 | grep -vf stopwords | sort -f | uniq -ic | sort -nr | head -10
-
-

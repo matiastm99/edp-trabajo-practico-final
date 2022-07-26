@@ -1,20 +1,29 @@
 #!/usr/bin/env bash
 
+NUM="[[:digit:]]"
 function palabra_mas_larga {
-	LARGA=""
-	for PALABRA in $(cat $1); do
-		if [ ${#PALABRA} -gt ${#LARGA} ]; then
-			LARGA=$PALABRA
-		fi
-	done
-	echo "La palabra mas larga es: $LARGA"
+    LARGA=""
+    for PALABRA in $(cat $1); do
+        if [[ "$PALABRA" == $NUM ]]; then
+			continue
+		else
+			if [ ${#PALABRA} -gt ${#LARGA} ]; then
+            	LARGA=$PALABRA
+            fi
+        fi
+    done
+    echo "La palabra mas larga es: $LARGA"
 }
 
 function palabra_mas_corta {
     CORTA=$LARGA
     for PALABRA in $(cat $1); do
-        if [ ${#PALABRA} -lt ${#CORTA} ]; then
-            CORTA=$PALABRA
+        if [[ "$PALABRA" == $NUM ]]; then
+			continue
+		else
+            if [ ${#PALABRA} -lt ${#CORTA} ]; then
+                CORTA=$PALABRA
+            fi
         fi
     done
     echo "La palabra mas corta es: $CORTA"
@@ -22,13 +31,13 @@ function palabra_mas_corta {
 
 function promedio_de_longitud {
     LETRAS=0
-	c=0
+    c=0
     for PALABRA in $(cat $1); do
         LETRAS=$((LETRAS+${#PALABRA}))
-		c=$((c+1))
+        c=$((c+1))
     done
-   	
-	PROMEDIO=$((LETRAS/c))
+
+    PROMEDIO=$((LETRAS/c))
     echo "El promedio de longitud de una palabra es de: $PROMEDIO letras"
 }
 

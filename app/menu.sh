@@ -9,7 +9,6 @@ while true; do
 	PS3='Elija> '
 	echo "Que app desea usar?"
 	opciones=("statsWords" "statsUsageWords" "findNames" "statsSentences" "blankLinesCounter" "SALIR")
-
 	select opcion in "${opciones[@]}"; do
 	case $opcion in
 		"statsWords")
@@ -29,7 +28,7 @@ while true; do
 			break ;;
 		"SALIR")
 			break 2;;
-		*) echo "La opcion $REPLY ingresada es incorrecta";;
+		*) echo "La opcion $REPLY no es valida";;
 	esac
 	done
 done
