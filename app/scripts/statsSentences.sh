@@ -23,8 +23,6 @@ function la_oracion_mas_corta {
 }
 
 function promedio_de_longitud {
-    ORACION=0
-    c=0
     while read -d "." line; do
 		for PALABRA in $line; do
 			ORACION=$((ORACION+1))
