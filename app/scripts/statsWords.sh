@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-NUM="[[:digit:]]"
 function palabra_mas_larga {
     LARGA=""
     for PALABRA in $(cat $1); do
-        if [[ "$PALABRA" == $NUM ]]; then
+        if [[ "$PALABRA" =~ [[:digit:]] ]]; then
 			continue
 		else
 			if [ ${#PALABRA} -gt ${#LARGA} ]; then
@@ -18,7 +17,7 @@ function palabra_mas_larga {
 function palabra_mas_corta {
     CORTA=$LARGA
     for PALABRA in $(cat $1); do
-        if [[ "$PALABRA" == $NUM ]]; then
+        if [[ "$PALABRA" =~ [[:digit:]] ]]; then
 			continue
 		else
             if [ ${#PALABRA} -lt ${#CORTA} ]; then
