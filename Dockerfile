@@ -1,6 +1,6 @@
 FROM ubuntu
 
-RUN sudo apt-get update && sudo apt-get upgrade -y
-COPY ./app /home/defensa
+#RUN apt-get update && apt-get upgrade -y
+COPY ./app /home
 #WORKDIR /home/defensa
 #CMD ["bash", "menu.sh"]
